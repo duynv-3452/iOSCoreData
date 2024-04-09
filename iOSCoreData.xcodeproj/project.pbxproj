@@ -7,25 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C930BB652BC52FE500C5A6DF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930BB642BC52FE500C5A6DF /* UserModel.swift */; };
+		C930BB672BC52FEF00C5A6DF /* FollowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930BB662BC52FEF00C5A6DF /* FollowerModel.swift */; };
 		C995FC1C2BC5231D00C14926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995FC1B2BC5231D00C14926 /* AppDelegate.swift */; };
 		C995FC1E2BC5231D00C14926 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995FC1D2BC5231D00C14926 /* SceneDelegate.swift */; };
-		C995FC202BC5231D00C14926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995FC1F2BC5231D00C14926 /* ViewController.swift */; };
 		C995FC232BC5231D00C14926 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C995FC222BC5231D00C14926 /* Base */; };
 		C995FC262BC5231D00C14926 /* iOSCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C995FC242BC5231D00C14926 /* iOSCoreData.xcdatamodeld */; };
 		C995FC282BC5231E00C14926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C995FC272BC5231E00C14926 /* Assets.xcassets */; };
 		C995FC2B2BC5231E00C14926 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C995FC2A2BC5231E00C14926 /* Base */; };
+		C995FC392BC5257000C14926 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995FC382BC5257000C14926 /* SearchVC.swift */; };
+		C995FC3B2BC5257B00C14926 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995FC3A2BC5257B00C14926 /* FavoriteVC.swift */; };
+		C995FC3E2BC5258A00C14926 /* FollowersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C995FC3D2BC5258A00C14926 /* FollowersVC.xib */; };
+		C995FC3F2BC5258A00C14926 /* FollowersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995FC3C2BC5258A00C14926 /* FollowersVC.swift */; };
+		C995FC422BC5259800C14926 /* UserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C995FC412BC5259800C14926 /* UserInfoVC.xib */; };
+		C995FC432BC5259800C14926 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995FC402BC5259800C14926 /* UserInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C930BB642BC52FE500C5A6DF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C930BB662BC52FEF00C5A6DF /* FollowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerModel.swift; sourceTree = "<group>"; };
 		C995FC182BC5231D00C14926 /* iOSCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C995FC1B2BC5231D00C14926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C995FC1D2BC5231D00C14926 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C995FC1F2BC5231D00C14926 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C995FC222BC5231D00C14926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C995FC252BC5231D00C14926 /* iOSCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSCoreData.xcdatamodel; sourceTree = "<group>"; };
 		C995FC272BC5231E00C14926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C995FC2A2BC5231E00C14926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C995FC2C2BC5231E00C14926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C995FC382BC5257000C14926 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		C995FC3A2BC5257B00C14926 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		C995FC3C2BC5258A00C14926 /* FollowersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersVC.swift; sourceTree = "<group>"; };
+		C995FC3D2BC5258A00C14926 /* FollowersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersVC.xib; sourceTree = "<group>"; };
+		C995FC402BC5259800C14926 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		C995FC412BC5259800C14926 /* UserInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C930BB632BC52FCE00C5A6DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C930BB642BC52FE500C5A6DF /* UserModel.swift */,
+				C930BB662BC52FEF00C5A6DF /* FollowerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C995FC0F2BC5231D00C14926 = {
 			isa = PBXGroup;
 			children = (
@@ -60,14 +83,68 @@
 			children = (
 				C995FC1B2BC5231D00C14926 /* AppDelegate.swift */,
 				C995FC1D2BC5231D00C14926 /* SceneDelegate.swift */,
-				C995FC1F2BC5231D00C14926 /* ViewController.swift */,
-				C995FC212BC5231D00C14926 /* Main.storyboard */,
+				C930BB632BC52FCE00C5A6DF /* Models */,
+				C995FC322BC523FB00C14926 /* Scenes */,
 				C995FC272BC5231E00C14926 /* Assets.xcassets */,
-				C995FC292BC5231E00C14926 /* LaunchScreen.storyboard */,
 				C995FC2C2BC5231E00C14926 /* Info.plist */,
 				C995FC242BC5231D00C14926 /* iOSCoreData.xcdatamodeld */,
 			);
 			path = iOSCoreData;
+			sourceTree = "<group>";
+		};
+		C995FC322BC523FB00C14926 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C995FC332BC5240200C14926 /* Storyboard */,
+				C995FC342BC5251800C14926 /* SearchVC */,
+				C995FC352BC5251E00C14926 /* FavoriteVC */,
+				C995FC362BC5253D00C14926 /* FollowersVC */,
+				C995FC372BC5254B00C14926 /* UserInfoVC */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C995FC332BC5240200C14926 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C995FC212BC5231D00C14926 /* Main.storyboard */,
+				C995FC292BC5231E00C14926 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C995FC342BC5251800C14926 /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				C995FC382BC5257000C14926 /* SearchVC.swift */,
+			);
+			path = SearchVC;
+			sourceTree = "<group>";
+		};
+		C995FC352BC5251E00C14926 /* FavoriteVC */ = {
+			isa = PBXGroup;
+			children = (
+				C995FC3A2BC5257B00C14926 /* FavoriteVC.swift */,
+			);
+			path = FavoriteVC;
+			sourceTree = "<group>";
+		};
+		C995FC362BC5253D00C14926 /* FollowersVC */ = {
+			isa = PBXGroup;
+			children = (
+				C995FC3C2BC5258A00C14926 /* FollowersVC.swift */,
+				C995FC3D2BC5258A00C14926 /* FollowersVC.xib */,
+			);
+			path = FollowersVC;
+			sourceTree = "<group>";
+		};
+		C995FC372BC5254B00C14926 /* UserInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				C995FC402BC5259800C14926 /* UserInfoVC.swift */,
+				C995FC412BC5259800C14926 /* UserInfoVC.xib */,
+			);
+			path = UserInfoVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +207,8 @@
 			files = (
 				C995FC282BC5231E00C14926 /* Assets.xcassets in Resources */,
 				C995FC2B2BC5231E00C14926 /* Base in Resources */,
+				C995FC3E2BC5258A00C14926 /* FollowersVC.xib in Resources */,
+				C995FC422BC5259800C14926 /* UserInfoVC.xib in Resources */,
 				C995FC232BC5231D00C14926 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,10 +220,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C995FC202BC5231D00C14926 /* ViewController.swift in Sources */,
+				C995FC392BC5257000C14926 /* SearchVC.swift in Sources */,
 				C995FC1C2BC5231D00C14926 /* AppDelegate.swift in Sources */,
+				C930BB652BC52FE500C5A6DF /* UserModel.swift in Sources */,
+				C995FC3F2BC5258A00C14926 /* FollowersVC.swift in Sources */,
 				C995FC262BC5231D00C14926 /* iOSCoreData.xcdatamodeld in Sources */,
+				C930BB672BC52FEF00C5A6DF /* FollowerModel.swift in Sources */,
+				C995FC432BC5259800C14926 /* UserInfoVC.swift in Sources */,
 				C995FC1E2BC5231D00C14926 /* SceneDelegate.swift in Sources */,
+				C995FC3B2BC5257B00C14926 /* FavoriteVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
