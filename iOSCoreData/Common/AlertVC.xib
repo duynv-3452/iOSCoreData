@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertVC" customModule="iOSCoreData" customModuleProvider="target">
+            <connections>
+                <outlet property="errorView" destination="kT3-Oc-cHH" id="zVE-Yi-K3g"/>
+                <outlet property="okButton" destination="fGw-9F-XOp" id="NH6-Sd-Daw"/>
+                <outlet property="subTitleLabel" destination="Xrb-73-NMy" id="7ZJ-77-WXe"/>
+                <outlet property="titleLabel" destination="f9m-EP-p4c" id="6ne-rs-Pxn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT3-Oc-cHH">
+                    <rect key="frame" x="40" y="354.33333333333331" width="313" height="168.33333333333331"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty user name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9m-EP-p4c">
+                            <rect key="frame" x="12" y="10" width="289" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a user name. We need to know who to look for 😡😏🥹" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrb-73-NMy">
+                            <rect key="frame" x="10" y="50" width="293" height="38.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGw-9F-XOp">
+                            <rect key="frame" x="20" y="108.33333333333337" width="273" height="40"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="7Ld-W9-jDD"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Ok"/>
+                            <connections>
+                                <action selector="tappedOkButton:" destination="-1" eventType="touchUpInside" id="u1e-vM-TYf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="f9m-EP-p4c" firstAttribute="top" secondItem="kT3-Oc-cHH" secondAttribute="top" constant="10" id="1ne-9M-1wl"/>
+                        <constraint firstItem="fGw-9F-XOp" firstAttribute="leading" secondItem="kT3-Oc-cHH" secondAttribute="leading" constant="20" id="40Z-3c-ogL"/>
+                        <constraint firstItem="Xrb-73-NMy" firstAttribute="top" secondItem="f9m-EP-p4c" secondAttribute="bottom" constant="16" id="498-Zh-ASd"/>
+                        <constraint firstItem="f9m-EP-p4c" firstAttribute="leading" secondItem="kT3-Oc-cHH" secondAttribute="leading" constant="12" id="Cfu-vA-STx"/>
+                        <constraint firstAttribute="trailing" secondItem="fGw-9F-XOp" secondAttribute="trailing" constant="20" id="Pjg-9t-QVN"/>
+                        <constraint firstItem="fGw-9F-XOp" firstAttribute="top" secondItem="Xrb-73-NMy" secondAttribute="bottom" constant="20" id="Vd6-JH-Rl4"/>
+                        <constraint firstItem="Xrb-73-NMy" firstAttribute="leading" secondItem="kT3-Oc-cHH" secondAttribute="leading" constant="10" id="XMw-mL-gtY"/>
+                        <constraint firstAttribute="trailing" secondItem="f9m-EP-p4c" secondAttribute="trailing" constant="12" id="bsx-Fo-4AI"/>
+                        <constraint firstAttribute="bottom" secondItem="fGw-9F-XOp" secondAttribute="bottom" constant="20" id="ccG-Fu-flI"/>
+                        <constraint firstItem="f9m-EP-p4c" firstAttribute="centerX" secondItem="kT3-Oc-cHH" secondAttribute="centerX" id="fML-qa-Sxe"/>
+                        <constraint firstAttribute="trailing" secondItem="Xrb-73-NMy" secondAttribute="trailing" constant="10" id="stY-Gn-4Mv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kT3-Oc-cHH" secondAttribute="trailing" constant="40" id="7pC-J9-XSc"/>
+                <constraint firstItem="kT3-Oc-cHH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="WXh-Xj-FSx"/>
+                <constraint firstItem="kT3-Oc-cHH" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="kLm-aq-Pdz"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
