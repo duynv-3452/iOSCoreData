@@ -13,7 +13,8 @@ class AlertVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var okButton: UIButton!
-    
+    var titleText: String?
+    var subTitleText: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -26,7 +27,8 @@ class AlertVC: UIViewController {
                 self.view.backgroundColor = .black.withAlphaComponent(0.6)
             }
         }
-        subTitleLabel.text = "Please enter a user name. We need to know who to look for \n😡😏🥹"
+        titleLabel.text = titleText
+        subTitleLabel.text = subTitleText
         errorView.layer.cornerRadius = 24
         errorView.addShadow()
         okButton.layer.cornerRadius = 10

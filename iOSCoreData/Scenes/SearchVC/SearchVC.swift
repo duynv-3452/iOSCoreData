@@ -35,6 +35,8 @@ final class SearchVC: UIViewController {
             let vc = AlertVC()
             vc.modalPresentationStyle = .overFullScreen
             vc.modalTransitionStyle = .crossDissolve
+            vc.titleText = "Enter a username"
+            vc.subTitleText = "Please enter a user name. We need to know who to look for \n😡😏🥹"
             present(vc, animated: true)
             return
         }

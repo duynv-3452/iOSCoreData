@@ -26,6 +26,10 @@ final class FollowersVC: UIViewController {
         super.viewDidLoad()
         configView()
         getFollowers(username: username ?? "", page: page)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(addFavorited))
     }
     
     private func configView() {
@@ -38,6 +42,11 @@ final class FollowersVC: UIViewController {
                                 forCellWithReuseIdentifier: "FollowerCollectionViewCell")
     }
     
+    @objc
+    private func addFavorited() {
+        
+    }
+    
     private func getFollowers(username: String, page: Int) {
         loadMore = true
         APICaller.shared.getFollower(username: username, page: page) { [weak self] result in
@@ -48,7 +57,14 @@ final class FollowersVC: UIViewController {
                     self.updateUI(followers: followers)
                 }
             case .failure(let error):
-                print("----------")
+                DispatchQueue.main.async {
+                    let vc = AlertVC()
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.titleText = "Error"
+                    vc.subTitleText = error.rawValue
+                    self.present(vc, animated: true)
+                }
             }
             self.loadMore = false
         }
@@ -76,6 +92,12 @@ extension FollowersVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         cell.configCell(follower: dataSource[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UserInfoVC()
+        vc.username = dataSource[indexPath.row].login
+        present(vc, animated: true)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
