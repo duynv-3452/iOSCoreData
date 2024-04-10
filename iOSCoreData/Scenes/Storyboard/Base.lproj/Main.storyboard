@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dYQ-az-zPX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -139,10 +140,25 @@
                     <view key="view" contentMode="scaleToFill" id="r9O-0e-WXI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YD8-uA-Urc">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="I8f-jZ-Jcj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I8f-jZ-Jcj" firstAttribute="bottom" secondItem="YD8-uA-Urc" secondAttribute="bottom" id="GF7-KG-ep9"/>
+                            <constraint firstItem="YD8-uA-Urc" firstAttribute="top" secondItem="I8f-jZ-Jcj" secondAttribute="top" id="NYM-FA-ft3"/>
+                            <constraint firstItem="YD8-uA-Urc" firstAttribute="leading" secondItem="I8f-jZ-Jcj" secondAttribute="leading" id="ggr-qt-tjU"/>
+                            <constraint firstItem="I8f-jZ-Jcj" firstAttribute="trailing" secondItem="YD8-uA-Urc" secondAttribute="trailing" id="zUP-4t-NMo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PM8-4t-R1I"/>
+                    <connections>
+                        <outlet property="tableView" destination="YD8-uA-Urc" id="VYL-er-LCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGh-GK-OED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
