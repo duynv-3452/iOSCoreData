@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate: AnyObject {
+    func didRequestFollowers(username: String)
+}
 final class UserInfoVC: UIViewController {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
@@ -18,8 +21,14 @@ final class UserInfoVC: UIViewController {
     @IBOutlet private weak var followersStackView: UIStackView!
     @IBOutlet private weak var getProfileButton: UIButton!
     @IBOutlet private weak var getFollowersButton: UIButton!
+    @IBOutlet private weak var publicReposLabel: UILabel!
+    @IBOutlet private weak var publicGistsLabel: UILabel!
+    @IBOutlet private weak var totalFollowersLabel: UILabel!
+    @IBOutlet private weak var totalFollowingLabel: UILabel!
     
+    weak var delegate: UserInfoVCDelegate!
     var username: String?
+    private var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +37,7 @@ final class UserInfoVC: UIViewController {
     }
     
     private func configView() {
+        avatarImageView.layer.cornerRadius = 12
         getProfileButton.layer.cornerRadius = 12
         getFollowersButton.layer.cornerRadius = 12
         githubStackView.layer.cornerRadius = 16
@@ -56,12 +66,17 @@ final class UserInfoVC: UIViewController {
     }
     
     private func updateUI(user: User) {
+        self.user = user
         downloadImage(url: user.avatarUrl ?? "")
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No location"
         bioLabel.text = user.bio ?? ""
         bioLabel.numberOfLines = 3
+        publicReposLabel.text = "\(user.publicRepos ?? 0)"
+        publicGistsLabel.text = "\(user.publicGists ?? 0)"
+        totalFollowersLabel.text = "\(user.followers ?? 0)"
+        totalFollowingLabel.text = "\(user.following ?? 0)"
     }
     
     func downloadImage(url: String) {
@@ -71,5 +86,22 @@ final class UserInfoVC: UIViewController {
                 self.avatarImageView.image = image
             }
         }
+    }
+    
+    @IBAction func tappedGithubProfile(_ sender: Any) {
+        guard let url = URL(string: user?.htmlUrl ?? "") else {
+            return
+        }
+        presentSafariVC(with: url)
+    }
+    
+    
+    @IBAction func tappedGetFollowers(_ sender: Any) {
+        guard user?.followers != 0 else {
+   
+            return
+        }
+        delegate.didRequestFollowers(username: user?.login ?? "")
+        self.dismiss(animated: true)
     }
 }

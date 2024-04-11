@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +19,10 @@
                 <outlet property="githubStackView" destination="5te-7D-z89" id="fSr-l4-L3K"/>
                 <outlet property="locationLabel" destination="wf9-9A-mwv" id="PPr-SD-igC"/>
                 <outlet property="nameLabel" destination="pPT-y3-4j8" id="B4l-oH-wFf"/>
+                <outlet property="publicGistsLabel" destination="56D-lY-PEE" id="VV9-f4-kjc"/>
+                <outlet property="publicReposLabel" destination="swQ-LU-cc4" id="04n-Jk-3TP"/>
+                <outlet property="totalFollowersLabel" destination="Vif-9W-WXS" id="fAl-gf-cCt"/>
+                <outlet property="totalFollowingLabel" destination="xYp-UN-ZdZ" id="kTW-rj-ddk"/>
                 <outlet property="usernameLabel" destination="tJJ-8K-bIZ" id="FVp-rB-VlX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -160,6 +164,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Github Profile"/>
+                                            <connections>
+                                                <action selector="tappedGithubProfile:" destination="-1" eventType="touchUpInside" id="gKG-cr-iQy"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,7 +228,7 @@
                                                     <rect key="frame" x="184.66666666666663" y="0.0" width="184.33333333333337" height="80"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="X0U-Dw-9xa">
-                                                            <rect key="frame" x="12" y="13.666666666666664" width="20" height="18.333333333333336"/>
+                                                            <rect key="frame" x="12" y="13.666666666666668" width="20" height="17.333333333333336"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="0ke-bm-BR7"/>
@@ -272,6 +279,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Get Followers"/>
+                                            <connections>
+                                                <action selector="tappedGetFollowers:" destination="-1" eventType="touchUpInside" id="tpt-cl-vNX"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -336,7 +346,7 @@
         <image name="folder" catalog="system" width="128" height="96"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
-        <image name="person.2" catalog="system" width="128" height="87"/>
+        <image name="person.2" catalog="system" width="128" height="82"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

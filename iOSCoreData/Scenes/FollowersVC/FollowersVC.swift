@@ -113,3 +113,13 @@ extension FollowersVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
     }
 }
+
+extension FollowersVC: UserInfoVCDelegate {
+    func didRequestFollowers(username: String) {
+        self.username = username
+        self.page = 1
+        self.title = username
+        self.dataSource.removeAll()
+        self.getFollowers(username: username, page: page)
+    }
+}
