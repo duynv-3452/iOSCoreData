@@ -7,10 +7,10 @@
 
 import UIKit
 
-class FavoriteCell: UITableViewCell {
+final class FavoriteCell: UITableViewCell {
 
-    @IBOutlet weak var avaterImage: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet private weak var avaterImage: UIImageView!
+    @IBOutlet private weak var usernameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,10 +18,12 @@ class FavoriteCell: UITableViewCell {
     }
     
     private func configView() {
-        
+        avaterImage.layer.cornerRadius = 12
+        avaterImage.layer.borderWidth = 1
+        avaterImage.layer.borderColor = UIColor.secondaryLabel.cgColor
     }
     
-    func configCell(follower: Follower) {
+    func configCell(follower: FavoriteFollower) {
         downloadImage(url: follower.avatarUrl ?? "")
         usernameLabel.text = follower.login
     }

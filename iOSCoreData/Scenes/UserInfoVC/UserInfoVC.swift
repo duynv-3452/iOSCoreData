@@ -10,6 +10,7 @@ import UIKit
 protocol UserInfoVCDelegate: AnyObject {
     func didRequestFollowers(username: String)
 }
+
 final class UserInfoVC: UIViewController {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
@@ -95,13 +96,9 @@ final class UserInfoVC: UIViewController {
         presentSafariVC(with: url)
     }
     
-    
     @IBAction func tappedGetFollowers(_ sender: Any) {
-        guard user?.followers != 0 else {
-   
-            return
-        }
-        delegate.didRequestFollowers(username: user?.login ?? "")
+        delegate.didRequestFollowers(username: username ?? "")
         self.dismiss(animated: true)
+        
     }
 }
