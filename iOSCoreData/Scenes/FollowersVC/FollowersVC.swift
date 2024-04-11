@@ -6,18 +6,18 @@
 //
 
 import UIKit
+import CoreData
 
 final class FollowersVC: UIViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
-    
     
     private var dataSource = [Follower]() {
         didSet {
             collectionView.reloadData()
         }
     }
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var username: String?
     var loadMore = false
     var hasMoreFollowers = true
@@ -44,7 +44,60 @@ final class FollowersVC: UIViewController {
     
     @objc
     private func addFavorited() {
+        APICaller.shared.getUserInfo(username: username ??  "") { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let user):
+                self.addUserForFavorites(user: user)
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    let vc = AlertVC()
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.titleText = "Error"
+                    vc.subTitleText = error.rawValue
+                    self.present(vc, animated: true)
+                }
+            }
+        }
+    }
+    
+    private func addUserForFavorites(user: User) {
+        let fetchRequest: NSFetchRequest<FavoriteFollower> = FavoriteFollower.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "login == %@", user.login ?? "")
         
+        do {
+            let existingFollowers = try context.fetch(fetchRequest)
+            
+            if let existingFollower = existingFollowers.first {
+                DispatchQueue.main.async {
+                    let vc = AlertVC()
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.titleText = "Error"
+                    vc.subTitleText = "\(existingFollower.login ?? "") is already in favorites"
+                    self.present(vc, animated: true)
+                }
+            } else {
+                let newFollower = FavoriteFollower(context: context)
+                newFollower.login = user.login
+                newFollower.avatarUrl = user.avatarUrl
+                
+                try context.save()
+                
+                DispatchQueue.main.async {
+                    let vc = AlertVC()
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.titleText = "Successful"
+                    vc.subTitleText = "You have successfully favorited \(user.login ?? "")"
+                    self.present(vc, animated: true)
+                    NotificationCenter.default.post(name: Notification.Name("NewFavoriteFollowerAdded"), object: nil)
+                }
+            }
+        } catch {
+            print("Error fetching existing follower: \(error)")
+        }
     }
     
     private func getFollowers(username: String, page: Int) {
@@ -96,6 +149,7 @@ extension FollowersVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UserInfoVC()
+        vc.delegate = self
         vc.username = dataSource[indexPath.row].login
         present(vc, animated: true)
     }

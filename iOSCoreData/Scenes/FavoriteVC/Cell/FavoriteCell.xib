@@ -28,16 +28,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p8-ey-HUJ">
-                                <rect key="frame" x="84" y="31.666666666666671" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="84" y="30" width="51.333333333333343" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="than" translatesAutoresizingMaskIntoConstraints="NO" id="fYN-9t-0n2">
+                                <rect key="frame" x="327" y="34.666666666666664" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="SEI-Qt-P3R"/>
+                                    <constraint firstAttribute="width" constant="20" id="yUN-lt-gQS"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fYN-9t-0n2" secondAttribute="trailing" constant="8" id="50w-s2-Bwq"/>
                             <constraint firstItem="5p8-ey-HUJ" firstAttribute="centerY" secondItem="4k5-5e-bKh" secondAttribute="centerY" id="FnO-Xg-spu"/>
                             <constraint firstItem="4k5-5e-bKh" firstAttribute="top" secondItem="sj7-ZG-Pqq" secondAttribute="top" constant="12" id="GDe-C8-rIo"/>
+                            <constraint firstItem="fYN-9t-0n2" firstAttribute="centerY" secondItem="sj7-ZG-Pqq" secondAttribute="centerY" id="GkI-69-whH"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4k5-5e-bKh" secondAttribute="bottom" constant="12" id="Xat-HG-M3p"/>
                             <constraint firstItem="4k5-5e-bKh" firstAttribute="leading" secondItem="sj7-ZG-Pqq" secondAttribute="leading" constant="12" id="nDU-Gz-3h4"/>
                             <constraint firstItem="5p8-ey-HUJ" firstAttribute="leading" secondItem="4k5-5e-bKh" secondAttribute="trailing" constant="12" id="po1-fz-SdS"/>
@@ -61,4 +70,7 @@
             <point key="canvasLocation" x="64.885496183206101" y="-148.2394366197183"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="than" width="128" height="128"/>
+    </resources>
 </document>
